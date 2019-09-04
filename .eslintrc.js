@@ -20,5 +20,6 @@ module.exports = {
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
     'react/prop-types': 'off',
     'react/destructuring-assignment': 'off'
-  }
+  },
+  parser: 'babel-eslint'
 };
