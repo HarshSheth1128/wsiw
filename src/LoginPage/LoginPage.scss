@@ -2,4 +2,14 @@
   background: #172023;
   height: 100%;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.LoginWrapper {
+  background: #2d3233;
+  min-height: 20px;
+  min-width: 20px;
 }
