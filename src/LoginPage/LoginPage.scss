@@ -12,10 +12,9 @@
 
 .LoginSplash {
   background: #2d3233;
-  min-height: 50px;
-  min-width: 50px;
   border: solid 5px $themeRed;
   border-radius: 10px;
+  min-width: 350px;
 }
 
 .LoginContentWrapper {
@@ -38,10 +37,14 @@
 }
 
 .AccountText {
+  margin-right: 5px;
   color: white;
+  flex-shrink: 5;
 }
 
 .SignupText {
+  margin-left: 5px;
+  flex-shrink: 5;
   color: $themeRed;
 }
 
@@ -59,12 +62,13 @@
   background-color: #c4c4c4;
   border: 1px solid $themeRed;
   height: 40px;
-  width: 350px;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: calc(100% - 20px);
   font-size: 15px;
   border-radius: 5px;
   color: $themeBlack;
-  padding-left: 10px;
-  padding-right: 10px;
+
   font-family: inherit;
 }
 
