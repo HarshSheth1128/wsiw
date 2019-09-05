@@ -5,7 +5,7 @@ import LoginPage from './LoginPage/LoginPage';
 function App() {
   return (
     <div className="App">
-      <LoginPage />
+      <LoginPage isLogin={true} />
     </div>
   );
 }

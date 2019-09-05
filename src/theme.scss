@@ -4,3 +4,11 @@ $themeBlack: #172023;
 $themeDarkGray: #2d3233;
 $themeBrightGreen: #09ff4e;
 $themeBrightRed: #fc0606;
+$themeLightGray: #c4c4c4;
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
