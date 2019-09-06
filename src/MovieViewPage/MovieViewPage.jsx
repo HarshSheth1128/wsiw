@@ -13,6 +13,7 @@ class MovieViewPage extends Component {
             <div className="MovieViewPage">
                 <div className="MovieViewModal">
                     <div className="ModalContentWrapper">
+                    <div className="ColumnsContentWrapper">
                         <div className="LeftColumnWrapper">
                         <img src={MoviePoster} style={{border: "thin solid #ee6055", height: 180}}/>
                         </div>
@@ -28,9 +29,6 @@ class MovieViewPage extends Component {
                                 {"duration: 120min"}
                                 </h4>
                             </div>
-                            <p className="MovieDescriptionText">
-                                {"London is the capital city of England. It is the most populous city in the United Kingdom, with a metropolitan area of over 13 million inhabitants."}
-                            </p>
                             <div className="GenreSection">
                                 <div className="GenreContentWrapper">
                                     <div className="GenreContentWrapper">
@@ -77,7 +75,26 @@ class MovieViewPage extends Component {
                                     </div>
                                 </div>
                             </div>
+                            <p className="MovieDescriptionText">
+                                {"Summary...  From Lucasfilm comes the first of the Star Wars standalone films, “Rogue One: A Star Wars Story,” an all-new epic adventure."}
+                            </p>
                         </div>
+                    </div>
+                    <div className="TabsSection"> 
+                        <div className="TabContentWrapper">
+                            <div className="TabHeadingsWrapper">
+                                <h1 className="TabHeadings">
+                                    {"Cast and Crew"}
+                                </h1>
+                                <h1 className="TabHeadings">
+                                    {"Critiques"}
+                                </h1>
+                                <h1 className="TabHeadings">
+                                    {"Recommendations"}
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
                     </div>
                 </div>
             </div>
