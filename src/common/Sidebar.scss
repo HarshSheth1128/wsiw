@@ -1,0 +1,33 @@
+@import '../theme.scss';
+
+.SideBar {
+  position: fixed;
+  height: calc(100% - 6px);
+  background: white;
+  min-width: 250px;
+  border: 3px solid $themeRed;
+  background: $themeDarkGray;
+  transform: translate(-256px);
+  transition: 0.3s;
+}
+
+.SideBar.open {
+  transform: translate(0px);
+}
+
+.ButtonHolder {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.chevron {
+  height: 40px;
+  width: 40px;
+  transition: 0.3s;
+}
+
+.chevron:hover {
+  height: 45px;
+  width: 45px;
+}
