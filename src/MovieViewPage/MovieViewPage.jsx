@@ -32,10 +32,20 @@ class MovieViewPage extends Component {
       };
 
     render(){
+        let MovieViewClass = '';
+        let MovieContent = '';
+        if (this.props.isOpen) {
+            MovieViewClass = 'MovieViewModal';
+            MovieContent = 'ModalContentWrapper';
+        } else {
+            MovieViewClass = 'MovieViewModalClosed';
+            MovieContent = 'MovieViewModalClosed';
+        }
+
         return(
-            <div className="MovieViewPage">
-                <div className="MovieViewModal">
-                    <div className="ModalContentWrapper">
+            //<div className="MovieViewPage">
+                <div className={MovieViewClass}>
+                    <div className={MovieContent}>
                         <div className="ColumnsContentWrapper">
                             <div className="LeftColumnWrapper">
                                 <img 
@@ -129,7 +139,7 @@ class MovieViewPage extends Component {
                         </div>
                     </div>
                 </div>
-            </div>
+            //</div>
         );
     }
 }
