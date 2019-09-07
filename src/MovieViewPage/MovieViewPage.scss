@@ -45,6 +45,12 @@
 .MoviePoster {
     border: thin solid #ee6055; 
     height: 180px;
+    transition: 0.3s;
+}
+
+.MoviePoster:hover {
+    border: thick solid #ee6055; 
+    height: 180px;
 }
 
 .IconsWrapper{
@@ -55,16 +61,43 @@
     flex-wrap: wrap;
 }
 
+.LikesIcon {
+    height: 20px;
+    width: 20px;
+    margin-top: 2px;
+    transition: 0.3s;
+}
+
+.LikesIcon:hover {
+    height: 25px;
+    width: 25px;
+    margin-top: 2px;
+}
+
+.ViewsIcon {
+    height: 20px;
+    width: 20px;
+    margin-top: 2px;
+    transition: 0.3s;
+}
+
+.ViewsIcon:hover {
+    height: 25px;
+    width: 25px;
+    margin-top: 2px;
+}
+
 .IconsText{
     font-size: 15px;
     color: $themeRed;
     font-family: 'Roboto Slab';
     font-style: normal;
     font-weight: bold;
-    margin-left: 0px;
+    margin-left: 4px;
     margin-right: 20px;
     margin-bottom: 5px;
     margin-top: 5px;
+    transition: 0.3s;
 }
 
 .RightContentWrapper {
@@ -162,6 +195,12 @@
     margin-right: 5px;
     margin-bottom: 5px;
     margin-left: 5px;
+    transition: 0.3s;
+}
+
+.GenreCategories:hover{
+    font-size: 17px;
+    outline: 2px solid $themeLightGray;
 }
 
 .TabsSection{
@@ -209,6 +248,7 @@
     font-size: 15px;
     color: $themeBlack;
     margin-bottom: 0px;
+    transition: 0.3s;
     //margin: 2px;
     //margin-right: 80px;
     //margin-left: 80px;
@@ -216,6 +256,7 @@
 
 .TabHeadings:hover {
     text-shadow: 0px 6px 4px $themeBlack;
+    font-size: 15px;
 }
 
 .SelectedTab{

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './MovieViewPage.scss';
 import MoviePoster from "./../assets/BigMoviePoster.png"
+import UnlikeIcon from "./../assets/Unlike.svg"
 import LikesIcon from "./../assets/Likes.svg"
 import ViewsIcon from "./../assets/Views.svg"
 import Button from '../common/Button';
@@ -17,16 +18,18 @@ class MovieViewPage extends Component {
           MovieDescription: "Summary... From Lucasfilm comes the first of the Star Wars standalone films, “Rogue One: A Star Wars Story,” an all-new epic adventure.",
           CurrentTab: "CastAndCrew",
           ActiveTab: "tab1",
-          Views: "120",
-          Likes: "120",
-          ViewsIconUrl: LikesIcon,
-          LikesIconUrl: ViewsIcon,
+          Views: 100,
+          Likes: 120,
+          ViewsIconUrl: ViewsIcon,
+          LikesIconUrl: LikesIcon,
+          UnlikeIconUrl: UnlikeIcon,
+          hasLiked: false,
       };
     }
 
     handleChange = (property, value) => {
         this.setState({ [property]: value });
-      };    
+      };
 
     render(){
         return(
@@ -40,14 +43,27 @@ class MovieViewPage extends Component {
                                     className="MoviePoster"
                                 />
                                 <div className="IconsWrapper">
+                                    {this.state.hasLiked && 
+                                        <img
+                                            onClick={() => this.setState(prevState => ({Likes: prevState.Likes - 1, hasLiked: !prevState.hasLiked}))}
+                                            src={this.state.LikesIconUrl}
+                                            className="LikesIcon"
+                                        />
+                                    }
+                                    {!this.state.hasLiked &&
+                                        <img
+                                            onClick={() => this.setState(prevState => ({Likes: prevState.Likes + 1, hasLiked: !prevState.hasLiked}))} 
+                                            src={this.state.UnlikeIconUrl}
+                                            className="LikesIcon"
+                                        />
+                                    }
+                                    <h3 className="IconsText">{this.state.Likes}</h3>
                                     <img
-                                        src={this.state.LikesIconUrl}
+                                        //onClick={() => this.setState(prevState => ({Views: prevState.Views + 1}))}
+                                        src={this.state.ViewsIconUrl}
+                                        className="ViewsIcon"
                                     />
                                     <h3 className="IconsText">{this.state.Views}</h3>
-                                    <img
-                                        src={this.state.ViewsIconUrl}
-                                    />
-                                    <h3 className="IconsText">{this.state.Likes}</h3>
                                 </div>
                             </div>
                             <div className="RightContentWrapper"> 
