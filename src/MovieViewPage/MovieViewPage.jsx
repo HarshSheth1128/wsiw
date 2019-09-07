@@ -14,7 +14,9 @@ class MovieViewPage extends Component {
           MoviePosterUrl: MoviePoster,
           MovieDuration: "120 min",
           MovieReleaseYear: "(2009)",
-          MovieGenres: new Array(12).fill("Action"),
+          MovieGenres: new Array(12).fill({
+              type: 'Action',
+          }),
           MovieDescription: "Summary... From Lucasfilm comes the first of the Star Wars standalone films, “Rogue One: A Star Wars Story,” an all-new epic adventure.",
           CurrentTab: "CastAndCrew",
           ActiveTab: "tab1",
@@ -80,22 +82,28 @@ class MovieViewPage extends Component {
                                 <div className="HeadingWrapper"> 
                                     <h1 className="MovieTitle">{this.state.Movie}</h1>   
                                     <h4 className="SecondaryHeadings">{this.state.MovieReleaseYear}</h4>
-                                    <h4 className="SecondaryHeadings" >{this.state.MovieDuration}</h4>
+                                    <h4 className="SecondaryHeadings" >{"duration: " + this.state.MovieDuration}</h4>
                                 </div>
                                 <div className="GenreSection">
                                     <div className="GenreContentWrapper">
                                         <h1 className="GenreTitle">{"Genre"}</h1>
                                         <div className="GenreCategoriesWrapper">
-                                            {this.state.MovieGenres.map(Genre => (
-                                                <h2 className="GenreCategories">
-                                                    {"Action"}
-                                                </h2>
-                                            ))}   
+                                            {this.state.MovieGenres.map(function(Genre, i) { 
+                                                return (
+                                                    <h2 key={i} className="GenreCategories">
+                                                        {Genre.type}
+                                                    </h2>
+                                                )
+                                            })}   
                                         </div>
                                     </div>
                                 </div>
                                 <p className="MovieDescriptionText">{this.state.MovieDescription}</p>
                             </div>
+                        </div>
+                        <div className="RowContentWrapper">
+                        <div>
+                            <p className="MovieDescriptionText2">{this.state.MovieDescription}</p>
                         </div>
                         <div className="TabsSection"> 
                             <div className="TabContentWrapper">
@@ -127,7 +135,7 @@ class MovieViewPage extends Component {
                                 </div>
                                 <div className="TabBarLine"/>
                                 {this.state.ActiveTab=="tab1" && (
-                                    <p>{" ........................This is tab 1 info"}</p>
+                                    <p>{" ........................................................................ .................................................. ...........................................................This is tab 1 info"}</p>
                                 )}
                                 {this.state.ActiveTab=="tab2" && (
                                     <p>{"........................This is tab 2 info"}</p>
@@ -136,6 +144,7 @@ class MovieViewPage extends Component {
                                     <p>{"........................This is tab 3 info"}</p>
                                 )}
                             </div>
+                        </div>
                         </div>
                     </div>
                 </div>

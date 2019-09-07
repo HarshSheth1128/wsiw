@@ -8,15 +8,17 @@ class App extends Component {
     super(props);
     this.state = {
       isLogin: true,
-      isMovieOpen: false,
+      isMovieOpen: true,
     };
   }
   render() {
     return (
       <div className="App">
+        {/*
         <MovieViewPage
           isOpen={this.state.isMovieOpen}
         />
+        */}
         <LoginPage isLogin={this.state.isLogin} />
       </div>
     );
