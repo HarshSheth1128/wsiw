@@ -43,9 +43,11 @@ class MovieViewPage extends Component {
                                     <img
                                         src={this.state.LikesIconUrl}
                                     />
+                                    <h3 className="IconsText">{this.state.Views}</h3>
                                     <img
                                         src={this.state.ViewsIconUrl}
                                     />
+                                    <h3 className="IconsText">{this.state.Likes}</h3>
                                 </div>
                             </div>
                             <div className="RightContentWrapper"> 
