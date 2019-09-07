@@ -37,9 +37,36 @@
     margin-left: 20px;
     margin-right: 20px;
     margin-top: 20px;
+    margin-bottom: 10px;
+    min-width: 140px;
+    height: 200px;
+}
+
+.MoviePoster {
+    border: thin solid #ee6055; 
+    height: 180px;
+}
+
+.IconsWrapper{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.LikesIcon path { 
+    fill: $themeRed;
+}
+
+.IconsText{
+    font-size: 20px;
+    color: $themeRed;
+    font-family: 'Roboto Slab';
+    font-style: normal;
+    font-weight: bold;
+    margin-left: 0px;
+    margin-right: 40px;
     margin-bottom: 5px;
-    //min-width: 150;
-    height: 190px;
+    margin-top: 5px;
 }
 
 .RightContentWrapper {
@@ -141,7 +168,7 @@
 
 .TabsSection{
     background: $themeLightGray;
-    border: inset 1px $themeRed;
+    border: solid 1px $themeRed;
     border-radius: 10px;
     //min-width: 200px;
     margin-left: 20px;
@@ -153,12 +180,23 @@
 .TabContentWrapper{
     display: flex;
     flex-direction: column;
+    //width: 100%;
 }
 
 .TabHeadingsWrapper{
+    //display: flex;
     display: flex;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
     flex-direction: row;
     flex-wrap: wrap;
+    margin: 0px;
+    border-radius: 10px;
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-bottom: 0px;
+    //display: -webkit-flex;
+    
 }
 
 .TabInformationWrapper{
@@ -170,9 +208,16 @@
     font-family: Roboto Slab;
     font-style: normal;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 15px;
     color: $themeBlack;
-    
+    margin-bottom: 0px;
+    //margin: 2px;
+    //margin-right: 80px;
+    //margin-left: 80px;
+}
+
+.TabHeadings:hover {
+    text-shadow: 0px 6px 4px $themeBlack;
 }
 
 .SelectedTab{
@@ -180,5 +225,12 @@
     font-style: normal;
     font-weight: bold;
     font-size: 20px;
+}
+
+.TabBarLine{
+    margin: 0px;
+    margin-left: 20px;
+    width: calc(100% - 40px);
+    border: 1px solid $themeBlack;
 }
 

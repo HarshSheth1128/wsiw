@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import './MovieViewPage.scss';
-import MoviePoster from "./../images/BigMoviePoster.png"
+import MoviePoster from "./../assets/BigMoviePoster.png"
+import LikesIcon from "./../assets/Likes.svg"
+import ViewsIcon from "./../assets/Views.svg"
+import Button from '../common/Button';
 
 class MovieViewPage extends Component {
     constructor(props) {
@@ -13,8 +16,17 @@ class MovieViewPage extends Component {
           MovieGenres: new Array(12).fill("Action"),
           MovieDescription: "Summary... From Lucasfilm comes the first of the Star Wars standalone films, “Rogue One: A Star Wars Story,” an all-new epic adventure.",
           CurrentTab: "CastAndCrew",
+          ActiveTab: "tab1",
+          Views: "120",
+          Likes: "120",
+          ViewsIconUrl: LikesIcon,
+          LikesIconUrl: ViewsIcon,
       };
     }
+
+    handleChange = (property, value) => {
+        this.setState({ [property]: value });
+      };    
 
     render(){
         return(
@@ -25,8 +37,16 @@ class MovieViewPage extends Component {
                             <div className="LeftColumnWrapper">
                                 <img 
                                     src={this.state.MoviePosterUrl} 
-                                    style={{border: "thin solid #ee6055", height: 180}}
+                                    className="MoviePoster"
                                 />
+                                <div className="IconsWrapper">
+                                    <img
+                                        src={this.state.LikesIconUrl}
+                                    />
+                                    <img
+                                        src={this.state.ViewsIconUrl}
+                                    />
+                                </div>
                             </div>
                             <div className="RightContentWrapper"> 
                                 <div className="HeadingWrapper"> 
@@ -52,16 +72,41 @@ class MovieViewPage extends Component {
                         <div className="TabsSection"> 
                             <div className="TabContentWrapper">
                                 <div className="TabHeadingsWrapper">
-                                    <h1 className="TabHeadings">
-                                        {"Cast and Crew"}
-                                    </h1>
-                                    <h1 className="TabHeadings">
-                                        {"Critiques"}
-                                    </h1>
-                                    <h1 className="TabHeadings">
-                                        {"Recommendations"}
-                                    </h1>
+                                    <h3 
+                                        onClick={() =>
+                                            this.setState(() => ({
+                                              ActiveTab: "tab1" ,
+                                            }))
+                                        }
+                                        className="TabHeadings">{"Cast and Crew"}
+                                    </h3>
+                                    <h3 
+                                        onClick={() =>
+                                            this.setState(() => ({
+                                              ActiveTab: "tab2",
+                                            }))
+                                        }
+                                        className="TabHeadings">{"Critiques"}
+                                    </h3>
+                                    <h3 
+                                        onClick={() =>
+                                            this.setState(() => ({
+                                              ActiveTab: "tab3",
+                                            }))
+                                        }
+                                        className="TabHeadings">{"Recommendations"}
+                                    </h3>
                                 </div>
+                                <div className="TabBarLine"/>
+                                {this.state.ActiveTab=="tab1" && (
+                                    <p>{" ........................This is tab 1 info"}</p>
+                                )}
+                                {this.state.ActiveTab=="tab2" && (
+                                    <p>{"........................This is tab 2 info"}</p>
+                                )}
+                                {this.state.ActiveTab=="tab3" && (
+                                    <p>{"........................This is tab 3 info"}</p>
+                                )}
                             </div>
                         </div>
                     </div>
