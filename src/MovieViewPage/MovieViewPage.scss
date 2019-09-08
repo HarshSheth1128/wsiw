@@ -360,11 +360,24 @@
     } 
 }
 
-//.TabSpecificDetailWrapper {
+.TabSpecificDetailWrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 10px;
+    margin-top: 0px;
+}
 
-//}
-
-//.TabSpecificText {
-
-//}
-
+.TabSpecificText {
+    font-family: Karla;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    color: $themeBlack;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    @media only screen and (max-width: 500px){
+        font-size: 10px;
+    }
+}

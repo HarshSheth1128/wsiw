@@ -14,12 +14,12 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {/*
+        {
         <MovieViewPage
           isOpen={this.state.isMovieOpen}
         />
-        */}
-        <LoginPage isLogin={this.state.isLogin} />
+        }
+        {/*<LoginPage isLogin={this.state.isLogin} />*/}
       </div>
     );
   }

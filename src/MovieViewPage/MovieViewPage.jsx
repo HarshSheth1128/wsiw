@@ -134,15 +134,17 @@ class MovieViewPage extends Component {
                                     </h3>
                                 </div>
                                 <div className="TabBarLine"/>
-                                {this.state.ActiveTab=="tab1" && (
-                                    <p>{" ........................................................................ .................................................. ...........................................................This is tab 1 info"}</p>
-                                )}
-                                {this.state.ActiveTab=="tab2" && (
-                                    <p>{"........................This is tab 2 info"}</p>
-                                )}
-                                {this.state.ActiveTab=="tab3" && (
-                                    <p>{"........................This is tab 3 info"}</p>
-                                )}
+                                <div className="TabSpecificDetailWrapper">
+                                    {this.state.ActiveTab=="tab1" && (
+                                        <p className="TabSpecificText">{" ........................This is tab 1 info"}</p>
+                                    )}
+                                    {this.state.ActiveTab=="tab2" && (
+                                        <p className="TabSpecificText">{"........................This is tab 2 info"}</p>
+                                    )}
+                                    {this.state.ActiveTab=="tab3" && (
+                                        <p className="TabSpecificText">{"........................This is tab 3 info"}</p>
+                                    )}
+                                </div>
                             </div>
                         </div>
                         </div>
