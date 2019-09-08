@@ -17,7 +17,7 @@ class MovieViewPage extends Component {
           MovieGenres: new Array(12).fill({
               type: 'Action',
           }),
-          MovieDescription: "Summary... From Lucasfilm comes the first of the Star Wars standalone films, “Rogue One: A Star Wars Story,” an all-new epic adventure.",
+          MovieDescription: "From Lucasfilm comes the first of the Star Wars standalone films, “Rogue One: A Star Wars Story,” an all-new epic adventure. In a time of conflict, a group of unlikely heroes band together on a mission to steal the plans to the Death Star, the Empire’s ultimate weapon of destruction.......",
           CurrentTab: "CastAndCrew",
           ActiveTab: "tab1",
           Views: 100,
