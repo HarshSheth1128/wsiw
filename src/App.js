@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import LoginPage from './LoginPage/LoginPage';
 import SideBar from './common/SideBar';
+import SearchBar from './common/SearchBar';
 
 class App extends Component {
   constructor(props) {
@@ -21,11 +22,12 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <SideBar
+        <SearchBar />
+        {/* <SideBar
           closeSideBar={this.closeSideBar}
           isOpen={this.state.isSidebarOpen}
         />
-        <LoginPage isLogin={this.state.isLogin} />
+        <LoginPage isLogin={this.state.isLogin} /> */}
       </div>
     );
   }
