@@ -190,6 +190,7 @@
     flex-direction: column;
     margin-top: 20px;
     margin-bottom: 0px;
+    margin-right: 0px;
 }
 
 .MovieDescriptionText {
@@ -201,7 +202,7 @@
     display: flex;
     width:100%;
     flex-direction: column;
-    margin-right: 30px;
+    margin-right: 20px;
     margin-bottom: 10px;
     @media only screen and (max-width: 500px){
         height: 0px;
@@ -221,11 +222,10 @@
         display: flex;
         width: 100%;
         flex-direction: column;
-        margin-right: 10px;
+        margin-right: 0px;
         margin-left: 10px;
         margin-bottom: 20px;
         margin-top: 0px;
-        position: relative;
     }    
 }
 
