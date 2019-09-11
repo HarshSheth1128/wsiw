@@ -17,3 +17,20 @@
   column-span: 100%;
   border-radius: 10px;
 }
+
+
+.CreateList {
+  background-color: $themeRed;
+  border-radius: 10px;
+  height: 40px;
+  width: 80px;
+  transition: 0.3s;
+}
+
+.CreateList:hover {
+  background-color: $themeRed;
+  border-radius: 10px;
+  height: 45px;
+  width: 85px;
+}
+

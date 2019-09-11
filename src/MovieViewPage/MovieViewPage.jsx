@@ -4,7 +4,8 @@ import MoviePoster from "./../assets/BigMoviePoster.png"
 import UnlikeIcon from "./../assets/Unlike.svg"
 import LikesIcon from "./../assets/Likes.svg"
 import ViewsIcon from "./../assets/Views.svg"
-import Button from '../common/Button';
+//import Button from '../common/Button';
+
 
 class MovieViewPage extends Component {
     constructor(props) {

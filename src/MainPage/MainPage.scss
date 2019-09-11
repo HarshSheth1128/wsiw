@@ -4,49 +4,128 @@
     background: $themeBlack;
     height: 100%;
     width: 100%;
-    display: flex;
-    flex-direction: column;
+    margin: 0px;
+    //display: flex;
+    //flex-direction: column;
     justify-content: center;
     //align-items: center;
+    overflow-y: scroll;
+}
+
+.MainPageContentWrapper{
+    display: flex;
+    flex-direction: column;
+    //margin: 5px;
+    
 }
 
 .topWidgetsContainer {
     display: flex;
     flex-direction: row;
     width: 100%;
-    //margin-right: 5px;
-    margin-top: 0px;
+    margin: 5px;
+    height: 45px;
 }
 
-.Chevroneft {
-
+.ChevronSideBar {
+    height: 40px;
+    width: 40px;
+    transition: 0.3s;
 }
 
-.ChevronRight {
+.ChevronSideBar:hover {
+    height: 45px;
+    width: 45px;
+}
 
+.ChevronList {
+    height: 100px;
+    width: 100px;
+    transition: 0.3s;
+}
+
+.ChevronList:hover {
+    height: 110px;
+    width: 110px;
 }
 
 .Settings {
-
-
+    height: 40px;
+    width: 40px;
+    transition: 0.3s;
 }
 
-.CreatingListButton {
+.Settings:hover {
+    height: 45px;
+    width: 45px;
+}
 
+.CreatingListButtonText {
+    color: white;
+    font-size: 12px;
+}
+
+.CreatingListButtonText:hover {
+    color: $themeBlack;
+    font-weight: bold;
 }
 
 .ListContainer {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    //width: 100%;
+}
 
+.ListContentWrapper {
+    display: flex;
+    flex-direction: column;
+    //width: 100%;
+}
+
+.ListTitleContainer{
+    display: flex;
+    flex-direction: column;
+    //width: 100%;
 }
 
 .ListTitle {
-
+    font-size: 18px;
+    color: $themeRed;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .MovieListWrapper {
+    display: flex;
+    flex-direction: row;
+    //width: 100%;
+    //overflow-x: auto;
+    height: 220px;
 
 }
 
+.MoviePoster {
+    height: 150px;
+    width: 110px;
+    //margin-top: 2px;
+    transition: 0.3s;
+    margin: 20px;
+    border: none;
+}
+
+.MoviePoster:hover {
+    height: 160px;
+    width: 120px;
+    border: none;
+    box-shadow: 10px 10px 10px black;
+
+}
+
+
+
+
+
+/*
 .HorizontalBar {
 
 }
@@ -54,7 +133,7 @@
 .ScrollBar {
 
 }
-
+*/
 
 
   
