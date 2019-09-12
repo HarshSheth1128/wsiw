@@ -4,6 +4,7 @@ import LoginPage from './LoginPage/LoginPage';
 import MovieViewPage from './MovieViewPage/MovieViewPage';
 import SideBar from './common/SideBar';
 import SearchBar from './common/SearchBar';
+import MainPage from './MainPage/MainPage';
 
 class App extends Component {
   constructor(props) {
@@ -21,11 +22,11 @@ class App extends Component {
     }));
   };
 
-
   render() {
     return (
       <div className="App">
-        <SearchBar />
+        <MainPage />
+        {/* <SearchBar /> */}
         {/* <SideBar
           closeSideBar={this.closeSideBar}
           isOpen={this.state.isSidebarOpen}
