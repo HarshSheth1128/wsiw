@@ -6,7 +6,7 @@ class LoginPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isLogin: props.isLogin,
+      isLogin: true,
       fullName: '',
       email: '',
       password: '',
@@ -54,7 +54,13 @@ class LoginPage extends Component {
                 type="password"
               />
             </form>
-            <Button variant="Login">
+            <Button
+              variant="Login"
+              onClick={() => {
+                console.log('hi');
+                this.props.history.push('/');
+              }}
+            >
               <span className="LoginButtonText">
                 {this.state.isLogin ? 'Log In' : 'Sign Up'}
               </span>

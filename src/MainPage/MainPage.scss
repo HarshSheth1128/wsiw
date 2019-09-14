@@ -4,18 +4,24 @@
   background: $themeDarkGray;
   height: 100%;
   width: 100%;
-  padding-top: 40px;
+  padding-top: 10px;
+  overflow: scroll;
   //display: flex;
   //flex-direction: column;
   justify-content: center;
   //align-items: center;
-  overflow-y: scroll;
 }
 
 .MainPageContentWrapper {
   display: flex;
   flex-direction: column;
   padding-top: 50px;
+}
+
+.BackWidgetsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .TopWidgetsContainer {
@@ -27,20 +33,20 @@
   margin-left: 10px;
   margin-right: 10px;
   position: absolute;
-  z-index: 200;
+  //   z-index: 200;
 }
 
 .ChevronSideBar {
   align-self: flex-start;
   margin-top: 10px;
-  height: 40px;
-  width: 40px;
+  height: 45px;
+  width: 45px;
   transition: 0.3s;
 }
 
 .ChevronSideBar:hover {
-  height: 45px;
-  width: 45px;
+  height: 50px;
+  width: 50px;
 }
 
 .ChevronList {
@@ -60,7 +66,7 @@
   transition: 0.3s;
   margin-right: 10px;
   align-self: flex-start;
-  margin-top: 10px;
+  margin-top: 15px;
 }
 
 .Settings:hover {
@@ -106,6 +112,16 @@
   display: flex;
   flex-direction: row;
   height: 200px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  position: relative;
+  transform: translate(0px);
+  transition: transform 1s;
+}
+
+.MovieListWrapperLhover {
+  transform: translate(-200px);
+  left: -500px;
 }
 
 .MoviePoster {
@@ -141,4 +157,9 @@
   top: 0px;
   margin-top: 10px;
   z-index: 200;
+}
+
+::-webkit-scrollbar {
+  width: 0px; /* Remove scrollbar space */
+  background: transparent; /* Optional: just make scrollbar invisible */
 }

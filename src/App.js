@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { HashRouter as Router, Route, Link, Redirect } from 'react-router-dom';
 import './App.css';
 import LoginPage from './LoginPage/LoginPage';
 import MovieViewPage from './MovieViewPage/MovieViewPage';
@@ -12,7 +13,7 @@ class App extends Component {
     this.state = {
       isMovieOpen: true,
       isSidebarOpen: true,
-      isLogin: true,
+      isLogin: false,
     };
   }
 
@@ -25,7 +26,15 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <MainPage />
+        <Router>
+          {!this.state.isLogin && <Redirect to="/login" />}
+          <Route
+            exact
+            path="/login"
+            component={props => <LoginPage {...props} />}
+          />
+          <Route exact path="/" component={MainPage} />
+        </Router>
         {/* <SearchBar /> */}
         {/* <SideBar
           closeSideBar={this.closeSideBar}
