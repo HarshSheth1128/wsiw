@@ -7,6 +7,7 @@ import ChevronLeft from '../assets/chevronLeft.svg';
 import Settings from '../assets/Settings.svg';
 import SearchBar from '../common/SearchBar';
 import Button from '../common/Button';
+import MovieViewPage from '../MovieViewPage/MovieViewPage';
 
 class MainPage extends Component {
   constructor(props) {
@@ -20,6 +21,7 @@ class MainPage extends Component {
           posterUrl: MoviePoster,
         }),
       }),
+      isMovieOpen: false,
     };
   }
 
@@ -34,6 +36,11 @@ class MainPage extends Component {
   render() {
     return (
       <>
+        {this.state.isMovieOpen && (
+          <div className="MovieViewWrapper">
+            <MovieViewPage isOpen={this.state.isMovieOpen} />
+          </div>
+        )}
         <SideBar
           closeSideBar={this.closeSideBar}
           isOpen={this.state.isSideBarOpen}
@@ -67,6 +74,7 @@ class MainPage extends Component {
                         // onClick={() => this.setState(prevState => ({Views: prevState.Views + 1}))}
                         src={movie.posterUrl}
                         className="MoviePoster"
+                        onClick={() => this.setState({ isMovieOpen: true })}
                       />
                     ))}
                   </div>
