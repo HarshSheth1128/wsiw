@@ -33,13 +33,15 @@ class MainPage extends Component {
     this.setState({ isSideBarOpen: true });
   };
 
+  closeMovieView = () => {
+    this.setState({ isMovieOpen: false });
+  };
+
   render() {
     return (
       <>
         {this.state.isMovieOpen && (
-          <div className="MovieViewWrapper">
-            <MovieViewPage isOpen={this.state.isMovieOpen} />
-          </div>
+          <MovieViewPage isOpen={this.state.isMovieOpen} closeView={this.closeMovieView} />
         )}
         <SideBar
           closeSideBar={this.closeSideBar}

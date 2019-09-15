@@ -4,6 +4,7 @@ import MoviePoster from '../assets/BigMoviePoster.png';
 import UnlikeIcon from '../assets/Unlike.svg';
 import LikesIcon from '../assets/Likes.svg';
 import ViewsIcon from '../assets/Views.svg';
+import CloseIcon from '../assets/close.svg';
 
 class MovieViewPage extends Component {
   constructor(props) {
@@ -36,21 +37,25 @@ class MovieViewPage extends Component {
   render() {
     let MovieViewClass = '';
     let MovieContent = '';
+    let MovieViewWrapper = '';
     if (this.props.isOpen) {
       MovieViewClass = 'MovieViewModal';
       MovieContent = 'ModalContentWrapper';
+      MovieViewWrapper = 'MovieViewWrapper';
     } else {
       MovieViewClass = 'MovieViewModalClosed';
       MovieContent = 'MovieViewModalClosed';
+      MovieViewWrapper = 'MovieViewModalClosed';
     }
 
     return (
       <>
+      <div className={MovieViewWrapper}>
         <div className={MovieViewClass}>
           <div className={MovieContent}>
             <div className="ColumnsContentWrapper">
               <div className="LeftColumnWrapper">
-                <img src={this.state.MoviePosterUrl} className="MoviePoster" />
+                <img src={this.state.MoviePosterUrl} className="MovieViewPagePoster" />
                 <div className="IconsWrapper">
                   {this.state.hasLiked && (
                     <img
@@ -83,13 +88,25 @@ class MovieViewPage extends Component {
               </div>
               <div className="RightContentWrapper">
                 <div className="HeadingWrapper">
+                  <div className="MovieAndYearWrapper">
                   <h1 className="MovieTitle">{this.state.Movie}</h1>
                   <h4 className="SecondaryHeadings">
                     {this.state.MovieReleaseYear}
                   </h4>
+                  </div>
                   <h4 className="SecondaryHeadings">
                     {`duration: ${this.state.MovieDuration}`}
                   </h4>
+                  <img
+                      //onClick={() =>
+                        //this.setState(() => ({
+                          //isMovieViewOpen: false,
+                        //}))
+                      //}
+                      onClick = {this.props.closeView}
+                      src={CloseIcon}
+                      className="closeIcon"
+                  />
                 </div>
                 <div className="GenreSection">
                   <div className="GenreContentWrapper">
@@ -152,7 +169,7 @@ class MovieViewPage extends Component {
                   {this.state.ActiveTab === 'tab1' && (
                     <p>
                       {
-                        ' ........................................................................ .................................................. ...........................................................This is tab 1 info'
+                        ' ........................This is tab 1 info'
                       }
                     </p>
                   )}
@@ -166,6 +183,7 @@ class MovieViewPage extends Component {
               </div>
             </div>
           </div>
+        </div>
         </div>
       </>
     );
