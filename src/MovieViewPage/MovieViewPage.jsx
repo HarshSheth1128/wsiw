@@ -10,6 +10,7 @@ class MovieViewPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      /*MoviePosition: {ListNumber: this.props.ListNumber, MovieIndex: this.props.MovieIndex}
       Movie: 'Star Wars',
       MoviePosterUrl: MoviePoster,
       MovieDuration: '120 min',
@@ -19,6 +20,7 @@ class MovieViewPage extends Component {
       }),
       MovieDescription:
         'Summary... From Lucasfilm comes the first of the Star Wars standalone films, “Rogue One: A Star Wars Story,” an all-new epic adventure.',
+      */
       CurrentTab: 'CastAndCrew',
       ActiveTab: 'tab1',
       Views: 100,
@@ -55,7 +57,7 @@ class MovieViewPage extends Component {
           <div className={MovieContent}>
             <div className="ColumnsContentWrapper">
               <div className="LeftColumnWrapper">
-                <img src={this.state.MoviePosterUrl} className="MovieViewPagePoster" />
+                <img src={this.props.movie.MoviePosterUrl} className="MovieViewPagePoster" />
                 <div className="IconsWrapper">
                   {this.state.hasLiked && (
                     <img
@@ -89,13 +91,13 @@ class MovieViewPage extends Component {
               <div className="RightContentWrapper">
                 <div className="HeadingWrapper">
                   <div className="MovieAndYearWrapper">
-                  <h1 className="MovieTitle">{this.state.Movie}</h1>
+                  <h1 className="MovieTitle">{this.props.movie.Movie}</h1>
                   <h4 className="SecondaryHeadings">
-                    {this.state.MovieReleaseYear}
+                    {this.props.movie.MovieReleaseYear}
                   </h4>
                   </div>
                   <h4 className="SecondaryHeadings">
-                    {`duration: ${this.state.MovieDuration}`}
+                    {`duration: ${this.props.movie.MovieDuration}`}
                   </h4>
                   <img
                       //onClick={() =>
@@ -112,7 +114,7 @@ class MovieViewPage extends Component {
                   <div className="GenreContentWrapper">
                     <h1 className="GenreTitle">{'Genre'}</h1>
                     <div className="GenreCategoriesWrapper">
-                      {this.state.MovieGenres.map((Genre, i) => (
+                      {this.props.movie.MovieGenres.map((Genre, i) => (
                         <h2 key={i} className="GenreCategories">
                           {Genre.type}
                         </h2>
@@ -121,14 +123,14 @@ class MovieViewPage extends Component {
                   </div>
                 </div>
                 <p className="MovieDescriptionText">
-                  {this.state.MovieDescription}
+                  {this.props.movie.MovieDescription}
                 </p>
               </div>
             </div>
             <div className="RowContentWrapper">
               <div>
                 <p className="MovieDescriptionText2">
-                  {this.state.MovieDescription}
+                  {this.props.movie.MovieDescription}
                 </p>
               </div>
               <div className="TabsSection">

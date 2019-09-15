@@ -19,8 +19,22 @@ class MainPage extends Component {
         title: 'Favourite Superhero Movies',
         movies: new Array(25).fill({
           posterUrl: MoviePoster,
+          Movie: 'Star Wars',
+          MoviePosterUrl: MoviePoster,
+          MovieDuration: '120 min',
+          MovieReleaseYear: '(2009)',
+          MovieGenres: new Array(12).fill({
+          type: 'Action',
+          Views: 100,
+          Likes: 120,
+          hasLiked: true,
+      }),
+      MovieDescription:
+        'Summary... From Lucasfilm comes the first of the Star Wars standalone films, “Rogue One: A Star Wars Story,” an all-new epic adventure.',
         }),
       }),
+      MovieListNumber: 0,
+      MovieIndex: 0,
       isMovieOpen: false,
     };
   }
@@ -36,12 +50,26 @@ class MainPage extends Component {
   closeMovieView = () => {
     this.setState({ isMovieOpen: false });
   };
-
+/*
+  UpdateMovieLikes = (MoviePosition) => {
+    ///this.setState({ movieLists[MoviePosition.ListNumber].movies[MoviePosition.MovieIndex] : 12});
+    this.setState(prevState => ({
+      [prevState.movieLists[MoviePosition.ListNumber].movies[MoviePosition.MovieIndex].Likes] : 5,
+      [prevState.movieLists[MoviePosition.ListNumber].movies[MoviePosition.MovieIndex].hasLiked] : true,
+    }))
+  };
+*/
   render() {
     return (
       <>
         {this.state.isMovieOpen && (
-          <MovieViewPage isOpen={this.state.isMovieOpen} closeView={this.closeMovieView} />
+          <MovieViewPage isOpen={this.state.isMovieOpen} 
+            closeView={this.closeMovieView} 
+            movie={this.state.movieLists[this.state.MovieListNumber].movies[this.state.MovieIndex]}
+            //ListNumber={this.state.MovieListNumber}
+            //MovieIndex={this.state.MovieIndex}
+            //updateLikes={this.UpdateMovieLikes}
+          />
         )}
         <SideBar
           closeSideBar={this.closeSideBar}
@@ -76,7 +104,7 @@ class MainPage extends Component {
                         // onClick={() => this.setState(prevState => ({Views: prevState.Views + 1}))}
                         src={movie.posterUrl}
                         className="MoviePoster"
-                        onClick={() => this.setState({ isMovieOpen: true })}
+                        onClick={() => this.setState({ isMovieOpen: true, MovieListNumber: i, MovieIndex: j, })}
                       />
                     ))}
                   </div>
