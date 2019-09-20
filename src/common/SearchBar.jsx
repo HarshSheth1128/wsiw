@@ -1,19 +1,54 @@
 import React, { Component } from 'react';
 import './SearchBar.scss';
 import Search from '../assets/search.svg';
-import Poster from '../assets/poster.jpg';
+import StarWars from '../assets/poster.jpg';
+import BlackPanther from '../assets/blackPanther.jpg';
+import Moonlight from '../assets/moonlight.jpg';
+import RougeOne from '../assets/MoviePoster.jpg';
+import BreakingBad from '../assets/breakingbad.jpg';
 import Plus from '../assets/plus.svg';
 
 class SearchBar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchResults: new Array(10).fill({
-        moviePoster: Poster,
-        title: 'Star Wars',
-        year: '(2019)',
-        runtime: '120 min',
-      }),
+      searchResults: [
+        {
+          moviePoster: StarWars,
+          title: 'Star Wars',
+          year: '(2019)',
+          runtime: '120 min',
+          description: `Rey develops her newly discovered abilities with the guidance of Luke Skywalker, who is unsettled by the strength of her powers. Meanwhile, the Resistance prepares for battle with the First Order.`,
+        },
+        {
+          moviePoster: BlackPanther,
+          title: 'Black Panther',
+          year: '(2019)',
+          runtime: '103 min',
+          description: `T'Challa, heir to the hidden but advanced kingdom of Wakanda, must step forward to lead his people into a new future and must confront a challenger from his country's past.`,
+        },
+        {
+          moviePoster: Moonlight,
+          title: 'Moonlight',
+          year: '(2019)',
+          runtime: '113 min',
+          description: `A young African-American man grapples with his identity and sexuality while experiencing the everyday struggles of childhood, adolescence, and burgeoning adulthood.`,
+        },
+        {
+          moviePoster: RougeOne,
+          title: 'Star Wars: Rouge One',
+          year: '(2019)',
+          runtime: '145 min',
+          description: `The daughter of an Imperial scientist joins the Rebel Alliance in a risky move to steal the Death Star plans.`,
+        },
+        {
+          moviePoster: BreakingBad,
+          title: 'Breaking Bad',
+          year: '(2019)',
+          runtime: '60 min per episode',
+          description: `A high school chemistry teacher diagnosed with inoperable lung cancer turns to manufacturing and selling methamphetamine in order to secure his family's future.`,
+        },
+      ],
       isSearchOpen: false,
     };
   }
@@ -62,14 +97,7 @@ class SearchBar extends Component {
                     <h1>{`Runtime ${result.runtime}`}</h1>
                     <img className="PlusButton" src={Plus} alt="add" />
                   </div>
-                  <p className="MovieDescription">
-                    Summary... From Lucasfilm comes the first of the Star Wars
-                    standalone films, “Rogue One: A Star Wars Story,” an all-new
-                    epic adventure. In a time of conflict, a group of unlikely
-                    heroes band together on a mission to steal the plans to the
-                    Death Star, the Empire’s ultimate weapon of
-                    destruction.......
-                  </p>
+                  <p className="MovieDescription">{result.description}</p>
                 </div>
               </div>
               <div className="SearchResultsLine" />

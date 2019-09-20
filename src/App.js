@@ -35,15 +35,6 @@ class App extends Component {
           />
           <Route exact path="/" component={MainPage} />
         </Router>
-        {/* <SearchBar /> */}
-        {/* <SideBar
-          closeSideBar={this.closeSideBar}
-          isOpen={this.state.isSidebarOpen}
-        />
-        <MovieViewPage
-          isOpen={this.state.isMovieOpen}
-        />
-        <LoginPage isLogin={this.state.isLogin} /> */}
       </div>
     );
   }
