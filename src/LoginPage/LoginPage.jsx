@@ -10,11 +10,26 @@ class LoginPage extends Component {
       fullName: '',
       email: '',
       password: '',
+      falseLogin: false,
     };
   }
 
   handleChange = (property, value) => {
     this.setState({ [property]: value });
+  };
+
+  authenticate = () => {
+    // I know this is not how auth works, we would encrypt this data
+    // and send it off to an api which would use the secret on the server and
+    // send back and authenticated JWT
+    if (
+      this.state.email === 'test@test.com' &&
+      this.state.password === 'password'
+    ) {
+      this.props.history.push('/');
+    } else {
+      this.setState({ falseLogin: true });
+    }
   };
 
   render() {
@@ -54,7 +69,10 @@ class LoginPage extends Component {
                 type="password"
               />
             </form>
-            <Button variant="Login">
+            {this.state.falseLogin && (
+              <h1 className="InvalidEmailText"> Invalid email and password </h1>
+            )}
+            <Button variant="Login" onClick={this.authenticate}>
               <span className="LoginButtonText">
                 {this.state.isLogin ? 'Log In' : 'Sign Up'}
               </span>
@@ -78,6 +96,10 @@ class LoginPage extends Component {
             </div>
           </div>
         </div>
+        <h1 className="InvalidEmailText">
+          <span style={{ color: 'white' }}>Hint:</span> use test@test.com and
+          password to login
+        </h1>
       </div>
     );
   }
