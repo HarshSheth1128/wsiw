@@ -6,7 +6,7 @@ class LoginPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isLogin: props.isLogin,
+      isLogin: true,
       fullName: '',
       email: '',
       password: '',

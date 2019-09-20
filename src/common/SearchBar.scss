@@ -1,0 +1,140 @@
+@import '../theme.scss';
+
+.SearchContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+}
+
+.SearchBar {
+  width: 60%;
+  height: 50px;
+  border-radius: 5px;
+  border: 2px solid black;
+  background: $searchBarColor;
+  display: flex;
+  flex-direction: row;
+  transition: 0.2s;
+  align-items: center;
+  z-index: 200;
+}
+
+// .SearchBar:hover {
+//   height: 52px;
+//   border-radius: 5px;
+//   border: 2px solid black;
+//   background: $searchBarColor;
+//   display: flex;
+//   flex-direction: row;
+// }
+
+.SearchIcon {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.SearchBarLine {
+  border: 1px solid $themeRed;
+  height: calc(100% - 18px);
+}
+
+.SearchBar > input {
+  width: 70%;
+  margin-left: 15px;
+  margin-right: 15px;
+  border: none;
+  background-color: $searchBarColor;
+  color: $themeRed;
+  font-family: inherit;
+  font-size: 20px;
+  text-align: center;
+}
+
+.SearchResults {
+  display: flex;
+  flex-direction: column;
+  background: $themeDarkGray;
+  width: calc(60% - 4px);
+  z-index: 1;
+  margin-top: -1px;
+  max-height: 0;
+  transition: max-height 1s;
+  overflow: hidden;
+  border-radius: 5px;
+  border: 2px solid black;
+}
+
+.SearchResults.open {
+  max-height: 500px;
+  overflow: scroll;
+}
+
+.SearchResultsLine {
+  border: 1px solid $themeRed;
+  margin-left: 20px;
+  width: calc(100% - 42px);
+}
+
+.SearchResult {
+  display: flex;
+  flex-direction: row;
+}
+
+.SearchPoster {
+  height: 150px;
+  width: 100px;
+  margin: 20px;
+  box-shadow: 1px 1px 15px black;
+}
+
+.MovieInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 2;
+  margin-right: 20px;
+}
+
+.MovieTitle > h1 {
+  font-size: 18px;
+  color: $themeRed;
+  -webkit-text-stroke-width: 0px;
+  -webkit-text-stroke-color: none;
+}
+
+.MovieTitle {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.MovieDescription {
+  font-size: 15px;
+  font-family: 'Karla', sans-serif;
+  color: white;
+  margin: 0px;
+}
+
+.PlusButton {
+  height: 30px;
+  width: 30px;
+}
+
+.PlusButton:hover {
+  height: 31px;
+  width: 31px;
+}
+
+@media (max-width: 425px) {
+  .SearchBar {
+    height: 40px;
+  }
+  .SearchBar:hover {
+    height: 42px;
+  }
+  .SearchBar > input {
+    font-size: 12px;
+  }
+}

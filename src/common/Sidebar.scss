@@ -1,0 +1,89 @@
+@import '../theme.scss';
+
+.SideBar {
+  position: fixed;
+  height: calc(100% - 6px);
+  background: white;
+  min-width: 250px;
+  border: 3px solid $themeRed;
+  background: $themeDarkGray;
+  transform: translate(-256px);
+  transition: 0.3s;
+  overflow: scroll;
+  z-index: 500;
+}
+
+.SideBar.open {
+  transform: translate(0px);
+}
+
+.ButtonHolder {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.chevron {
+  height: 40px;
+  width: 40px;
+  transition: 0.3s;
+}
+
+.chevron:hover {
+  height: 45px;
+  width: 45px;
+}
+
+.Profile {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  transition: 0.2s;
+  margin-left: 10px;
+}
+
+.Profile:hover {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 20px;
+}
+
+.ProfilePic {
+  object-fit: fill;
+  height: 40px;
+  width: 40px;
+  border-radius: 8px;
+}
+
+.ProfileUsername {
+  margin: 0px;
+  margin-left: 10px;
+  font-size: 15px;
+  color: $themeRed;
+}
+
+.SideBarLine {
+  margin: 20px;
+  width: calc(100% - 40px);
+  border: 1px solid $themeRed;
+}
+
+.PlusButton {
+  background-color: $themeBlack;
+  height: 40px;
+  width: 40px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.PlusText {
+  color: white;
+}
