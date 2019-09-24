@@ -83,12 +83,12 @@ class MovieViewPage extends Component {
               </div>
               <div className="RightContentWrapper">
                 <div className="HeadingWrapper">
-                  <h1 className="MovieTitle">{this.state.Movie}</h1>
-                  <h4 className="SecondaryHeadings">
-                    {this.state.MovieReleaseYear}
-                  </h4>
+                  <h1 className="MovieTitle">{`${this.state.Movie}   ${this.state.MovieReleaseYear}`}</h1>
                   <h4 className="SecondaryHeadings">
                     {`duration: ${this.state.MovieDuration}`}
+                  </h4>
+                  <h4 className="CloseText" onClick={this.props.closeMovieView}>
+                    Close
                   </h4>
                 </div>
                 <div className="GenreSection">

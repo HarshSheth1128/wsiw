@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
 import Puppy from '../assets/puppy.jpg';
+import Monkey from '../assets/monkey.jpeg';
+import Natalie from '../assets/natalie-portman.jpg';
+import Robert from '../assets/rdj.jpg';
+import GOAT from '../assets/mahomes.jpg';
+import Firetruck from '../assets/firetruck.jpg';
 import './Sidebar.scss';
 import ChevronLeft from '../assets/chevronLeft.svg';
 
@@ -9,10 +14,32 @@ class SideBar extends Component {
     this.state = {
       username: 'nyanman28',
       profilePicUrl: Puppy,
-      friends: new Array(10).fill({
-        username: 'anjali.notaney',
-        profilePicUrl: Puppy,
-      }),
+      friends: [
+        {
+          username: 'anjali.notaney',
+          profilePicUrl: Puppy,
+        },
+        {
+          username: 'monkey539',
+          profilePicUrl: Monkey,
+        },
+        {
+          username: 'natalie.portman',
+          profilePicUrl: Natalie,
+        },
+        {
+          username: 'robert the great',
+          profilePicUrl: Robert,
+        },
+        {
+          username: 'GOAT',
+          profilePicUrl: GOAT,
+        },
+        {
+          username: 'weoooooo',
+          profilePicUrl: Firetruck,
+        },
+      ],
     };
   }
 
