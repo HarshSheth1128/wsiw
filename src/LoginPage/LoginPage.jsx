@@ -40,7 +40,7 @@ class LoginPage extends Component {
             <h1 className="LoginText">
               {this.state.isLogin ? 'Log In' : 'Sign Up'}
             </h1>
-            <form>
+            <form onSubmit={this.authenticate}>
               {!this.state.isLogin && (
                 <>
                   <label className="FormLabel">Full Name</label>
@@ -68,15 +68,16 @@ class LoginPage extends Component {
                 className="InputForm"
                 type="password"
               />
+              <Button variant="Login" onClick={this.authenticate}>
+                <span className="LoginButtonText">
+                  {this.state.isLogin ? 'Log In' : 'Sign Up'}
+                </span>
+              </Button>
             </form>
             {this.state.falseLogin && (
               <h1 className="InvalidEmailText"> Invalid email and password </h1>
             )}
-            <Button variant="Login" onClick={this.authenticate}>
-              <span className="LoginButtonText">
-                {this.state.isLogin ? 'Log In' : 'Sign Up'}
-              </span>
-            </Button>
+
             <div className="SignupWrapper">
               <h3 className="AccountText">
                 {this.state.isLogin
