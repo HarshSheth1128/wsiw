@@ -4,11 +4,13 @@ import MoviePoster from '../assets/BigMoviePoster.png';
 import UnlikeIcon from '../assets/Unlike.svg';
 import LikesIcon from '../assets/Likes.svg';
 import ViewsIcon from '../assets/Views.svg';
+import CloseIcon from '../assets/close.svg';
 
 class MovieViewPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      /*MoviePosition: {ListNumber: this.props.ListNumber, MovieIndex: this.props.MovieIndex}
       Movie: 'Star Wars',
       MoviePosterUrl: MoviePoster,
       MovieDuration: '120 min',
@@ -18,6 +20,7 @@ class MovieViewPage extends Component {
       }),
       MovieDescription:
         'Summary... From Lucasfilm comes the first of the Star Wars standalone films, “Rogue One: A Star Wars Story,” an all-new epic adventure.',
+      */
       CurrentTab: 'CastAndCrew',
       ActiveTab: 'tab1',
       Views: 100,
@@ -36,21 +39,25 @@ class MovieViewPage extends Component {
   render() {
     let MovieViewClass = '';
     let MovieContent = '';
+    let MovieViewWrapper = '';
     if (this.props.isOpen) {
       MovieViewClass = 'MovieViewModal';
       MovieContent = 'ModalContentWrapper';
+      MovieViewWrapper = 'MovieViewWrapper';
     } else {
       MovieViewClass = 'MovieViewModalClosed';
       MovieContent = 'MovieViewModalClosed';
+      MovieViewWrapper = 'MovieViewModalClosed';
     }
 
     return (
       <>
+      <div className={MovieViewWrapper}>
         <div className={MovieViewClass}>
           <div className={MovieContent}>
             <div className="ColumnsContentWrapper">
               <div className="LeftColumnWrapper">
-                <img src={this.state.MoviePosterUrl} className="MoviePoster" />
+                <img src={this.props.movie.MoviePosterUrl} className="MovieViewPagePoster" />
                 <div className="IconsWrapper">
                   {this.state.hasLiked && (
                     <img
@@ -83,19 +90,26 @@ class MovieViewPage extends Component {
               </div>
               <div className="RightContentWrapper">
                 <div className="HeadingWrapper">
-                  <h1 className="MovieTitle">{`${this.state.Movie}   ${this.state.MovieReleaseYear}`}</h1>
+                  <div className="MovieAndYearWrapper">
+                  <h1 className="MovieTitle">{this.props.movie.Movie}</h1>
                   <h4 className="SecondaryHeadings">
-                    {`duration: ${this.state.MovieDuration}`}
+                    {this.props.movie.MovieReleaseYear}
                   </h4>
-                  <h4 className="CloseText" onClick={this.props.closeMovieView}>
-                    Close
+                  </div>
+                  <h4 className="SecondaryHeadings">
+                    {`duration: ${this.props.movie.MovieDuration}`}
                   </h4>
+                   <img 
+                      onClick = {this.props.closeMovieView}
+                      src={CloseIcon}
+                      className="closeIcon"
+                  />
                 </div>
                 <div className="GenreSection">
                   <div className="GenreContentWrapper">
                     <h1 className="GenreTitle">{'Genre'}</h1>
                     <div className="GenreCategoriesWrapper">
-                      {this.state.MovieGenres.map((Genre, i) => (
+                      {this.props.movie.MovieGenres.map((Genre, i) => (
                         <h2 key={i} className="GenreCategories">
                           {Genre.type}
                         </h2>
@@ -104,14 +118,14 @@ class MovieViewPage extends Component {
                   </div>
                 </div>
                 <p className="MovieDescriptionText">
-                  {this.state.MovieDescription}
+                  {this.props.movie.MovieDescription}
                 </p>
               </div>
             </div>
             <div className="RowContentWrapper">
               <div>
                 <p className="MovieDescriptionText2">
-                  {this.state.MovieDescription}
+                  {this.props.movie.MovieDescription}
                 </p>
               </div>
               <div className="TabsSection">
@@ -152,7 +166,7 @@ class MovieViewPage extends Component {
                   {this.state.ActiveTab === 'tab1' && (
                     <p>
                       {
-                        ' ........................................................................ .................................................. ...........................................................This is tab 1 info'
+                        ' ........................This is tab 1 info'
                       }
                     </p>
                   )}
@@ -166,6 +180,7 @@ class MovieViewPage extends Component {
               </div>
             </div>
           </div>
+        </div>
         </div>
       </>
     );

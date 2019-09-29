@@ -1,5 +1,18 @@
 @import '../theme.scss';
 
+
+.MovieViewWrapper {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  z-index: 400;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+}
+
 .MovieViewPage {
   background: $themeLightGray;
   height: 100%;
@@ -57,8 +70,10 @@
   }
 }
 
-.MoviePoster {
-  border: thin solid #ee6055;
+.MovieViewPagePoster {
+  //border: thin solid #ee6055;
+  box-shadow: 1px 1px 10px #252525;
+  border-radius: 5px;
   height: 180px;
   // transition: 0.3s;
   @media only screen and (max-width: 500px) {
@@ -70,9 +85,20 @@
 .IconsWrapper {
   display: flex;
   -webkit-justify-content: space-between;
-  justify-content: space-between;
+  justify-content: space-evenly;
   flex-direction: row;
   flex-wrap: wrap;
+}
+
+.closeIcon {
+  height: 20px;
+  width: 20px;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+.closeIcon:hover {
+  border: thin solid #c4c4c4;
 }
 
 .LikesIcon {
@@ -82,23 +108,11 @@
   transition: 0.3s;
 }
 
-.LikesIcon:hover {
-  height: 25px;
-  width: 25px;
-  margin-top: 2px;
-}
-
 .ViewsIcon {
   height: 20px;
   width: 20px;
   margin-top: 2px;
   transition: 0.3s;
-}
-
-.ViewsIcon:hover {
-  height: 25px;
-  width: 25px;
-  margin-top: 2px;
 }
 
 .IconsText {
@@ -125,7 +139,13 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-between; 
+}
+
+.MovieAndYearWrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .MovieTitle {
@@ -263,11 +283,6 @@
     font-size: 10px;
     outline: 1px solid #ee6055;
   }
-}
-
-.GenreCategories:hover {
-  font-size: 17px;
-  outline: 2px solid $themeLightGray;
 }
 
 .TabsSection {
