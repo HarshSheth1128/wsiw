@@ -11,6 +11,7 @@ import Settings from '../assets/Settings.svg';
 import SearchBar from '../common/SearchBar';
 import Button from '../common/Button';
 import MovieViewPage from '../MovieViewPage/MovieViewPage';
+import Share from '../assets/share.svg';
 
 class MainPage extends Component {
   constructor(props) {
@@ -148,9 +149,11 @@ class MainPage extends Component {
                     <h1 key={i} className="ListTitle">
                       {list.title}
                     </h1>
-                    <h1 key={i} className="ListTitle Share">
-                      Share =>
-                    </h1>
+                    <img
+                      src={Share}
+                      className="SharePlaylist"
+                      title="Share"
+                    />
                   </div>
                   <div className="MovieListWrapper">
                     {list.movies.map((movie, j) => (
