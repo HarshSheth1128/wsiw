@@ -192,6 +192,12 @@
   transition: 0.3s;
   margin-right: 10px;
   align-self: flex-start;
+  @media only screen and (max-width: 450px) {
+    margin-top: 12px;
+    height: 30px;
+    width: 30px;
+    transition: 0.3s;
+  }
 }
 
 .SharePlaylist:hover {
