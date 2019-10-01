@@ -185,3 +185,22 @@
   width: 100%;
   background: rgba(0, 0, 0, 0.7);
 }
+
+.SharePlaylist {
+  height: 40px;
+  width: 40px;
+  transition: 0.3s;
+  margin-right: 10px;
+  align-self: flex-start;
+  @media only screen and (max-width: 450px) {
+    margin-top: 12px;
+    height: 30px;
+    width: 30px;
+    transition: 0.3s;
+  }
+}
+
+.SharePlaylist:hover {
+  height: 45px;
+  width: 45px;
+}

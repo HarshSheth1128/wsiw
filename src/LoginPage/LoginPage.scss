@@ -8,14 +8,37 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow-y: scroll;
 }
 
 .LoginSplash {
+  display: flex;
+  flex-direction: column;
   background: #2d3233;
   border: solid 5px $themeRed;
   border-radius: 10px;
   min-width: 350px;
   margin: 20px;
+  margin-top: 100px;
+  position: relative;
+  @media only screen and (max-height: 667px) {
+    margin: 30px;
+    margin-top: 100px;
+    transition: 0.3s;
+  }
+  @media all and (max-width: 400px) and (max-height: 570px){
+    min-width: 250px;
+    margin: 30px;
+    transition: 0.3s;
+    margin-top: 100;
+    min-height: 500px;
+  }
+  @media only screen and (max-width: 420px) {
+    min-width: 250px;
+    margin: 30px;
+    transition: 0.3s;
+    margin-top: 100px;
+  }
 }
 
 .LoginContentWrapper {
@@ -24,6 +47,10 @@
   margin-left: 30px;
   margin-right: 30px;
   margin-bottom: 20px;
+  @media all and (max-height: 570px){
+    min-height: 500px;
+    overflow-y: scroll;
+  }
 }
 
 .SignupWrapper {
@@ -89,4 +116,6 @@ label {
 .InvalidEmailText {
   font-size: 1rem;
   color: $themeRed;
+  margin-left: 30px;
+  margin-right: 30px;
 }
